@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Les articles
+{% endblock %}
+{% block body %}
+    <h1>Liste des Gammes informatiques</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Titre</th>
+            <th>Résumé</th>
+            <th>Date de publication</th>
+            <th>Auteur</th>
+            <th>Etat</th>
+        </tr>
+        {% for val in article %}
+            <tr>
+                <td>{{ val.titre }}</td>
+                <td>{{ val.resume }}</td>
+                <td>{{ val.date_publication | date("d/m/Y") }}</td>
+                <td>{{ val.auteur }}</td>
+                <td>{{ (val.date_publication | date("Y-m-d")) < "-2 years"|date("Y-m-d") ?"Archivé":"Non Archivé" }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

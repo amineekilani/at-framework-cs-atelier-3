@@ -4,4 +4,5 @@
 {% endblock %}
 {% block body %}
 	<h1>{{ parent() }} Bonjour</h1>
+    {{ "now" | date('d-m-y') }}
 {% endblock %}

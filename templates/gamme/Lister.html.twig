@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Les gammes
+{% endblock %}
+{% block body %}
+    <h1>Liste des Gammes informatiques</h1>
+    <ul>
+        {% for val in gamme %}
+            <li>{{ val }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
