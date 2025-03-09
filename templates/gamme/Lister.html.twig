@@ -1,12 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-    Les gammes
+    {{parent()}} - Exercice 1
 {% endblock %}
 {% block body %}
-    <h1>Liste des Gammes informatiques</h1>
+    <h1>{{ "Liste des Gammes informatiques" | upper }}</h1>
     <ul>
         {% for val in gamme %}
-            <li>{{ val }}</li>
+            <li>{{ val | capitalize }}</li>
         {% endfor %}
     </ul>
+    <a href="/article/lister">Liste des articles</a>
 {% endblock %}

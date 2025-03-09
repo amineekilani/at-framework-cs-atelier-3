@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Liste des Articles</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Libellé</th>
+            <th>Quantité</th>
+            <th>Gamme</th>
+        </tr>
+        {% for val in articles %}
+            <tr>
+                <td>{{ val.id }}</td>
+                <td>{{ val.libelle | title | upper }}</td>
+                <td>{{ val.quantite }}</td>
+                <td>{{ val.gamme | capitalize }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
